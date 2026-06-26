@@ -2,7 +2,7 @@ from flask import Flask, request, Response
 
 app = Flask(__name__)
 
-@app.route("/ds/v2-us/post/flipnote.post", methods=["POST"])
+@app.route("/ds/v2-xx/post/flipnote.post", methods=["POST"])
 def flipnote_post():
     # Get DSi ID from header
     dsi_id = request.headers.get("X-DSi-ID", "UNKNOWN-DSI")
