@@ -1,0 +1,60 @@
+html
+  head
+    meta(name="uppertitle" content="Mail")
+    meta(name="uppersubtop" content="")
+    meta(name="uppersubbottom" content="")
+    link(rel="stylesheet" type="text/css" href="/css/ds/common.css")
+
+  body
+    .container
+      .info-head(align="center") Notification Settings
+
+      .info-body
+        | Choose whether or not to receive messages from Hatena.
+        | Messages will include maintenance notices and announcements
+        | about added functions and service issues.
+
+      table.detail(width="226" border="0" cellspacing="0" cellpadding="0")
+        tr
+          td(width="226")
+            .hr
+
+        // Service-related announcements
+        tr
+          td
+            .item-term(align="left") Service-related announcements
+
+        tr
+          td
+            .item-value(align="right")
+              if user.receive_announcement
+                img(src="/images/ds/check.ntft" width="12" height="11")
+                | Receive |
+                a(rel="flat" href=`/ds/v2/setting.letter.htm?receive_announcement=0`) Do not receive
+              else
+                a(rel="flat" href=`/ds/v2/setting.letter.htm?receive_announcement=1`) Receive
+                | |
+                img(src="/images/ds/check.ntft" width="12" height="11")
+                | Do not receive
+
+        // Newsletter settings
+        tr
+          td
+            .item-term(align="left") Newsletters and activity reports
+
+        tr
+          td
+            .item-value(align="right")
+              if user.receive_newsletter
+                img(src="/images/ds/check.ntft" width="12" height="11")
+                | Receive |
+                a(rel="flat" href=`/ds/v2/setting.letter.htm?receive_newsletter=0`) Do not receive
+              else
+                a(rel="flat" href=`/ds/v2/setting.letter.htm?receive_newsletter=1`) Receive
+                | |
+                img(src="/images/ds/check.ntft" width="12" height="11")
+                | Do not receive
+
+        tr
+          td
+            .hr

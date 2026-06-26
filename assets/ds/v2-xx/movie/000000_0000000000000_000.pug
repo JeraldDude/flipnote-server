@@ -1,0 +1,160 @@
+html
+  head
+    title #{flipnote.title}
+
+    // DSi meta buttons
+    meta(name="upperlink" content=`/ppm/${flipnote.creator_fsid}/${flipnote.filename}`)
+    meta(name="starbutton" content=`/flipnote/${flipnote.creator_fsid}/${flipnote.id}.star`)
+    meta(name="starbutton1" content=`/flipnote/${flipnote.creator_fsid}/${flipnote.id}.star/green,2`)
+    meta(name="deletebutton" content=`/flipnote/${flipnote.creator_fsid}/${flipnote.id}.delete`)
+    meta(name="savebutton" content=`/ppm/${flipnote.creator_fsid}/${flipnote.filename}`)
+    meta(name="playcontrolbutton" content="")
+
+    link(rel="stylesheet" href="/css/camp100618.css")
+
+  body
+    // -------------------------------
+    // Tabs (Description / Comments)
+    // -------------------------------
+    table.tab(width="240" border="0" cellspacing="0" cellpadding="0")
+      tr
+        td.border(width="5")
+          .border
+        td.border(width="70")
+          .border
+        td.border(width="95")
+          .border
+
+      tr
+        td.space
+        td.tabon(align="center")
+          .on Description
+        td.taboff(align="center")
+          a.taboff(href=`/flipnote/${flipnote.creator_fsid}/${flipnote.id}.htm?mode=commentshalfsize`)
+            | Comments(#{flipnote.comment_count})
+
+    // -------------------------------
+    // Details Table
+    // -------------------------------
+    table.detail(width="226" border="0" cellspacing="0" cellpadding="0")
+
+      // Title
+      tr
+        th(width="90")
+          .item-term Title
+        td(width="136")
+          .item-value(align="right") #{flipnote.title}
+
+      tr
+      tr
+        td(colspan="2")
+          .hr
+
+      // Creator
+      tr
+        th(width="90")
+          .item-term Creator
+        td(width="136")
+          .item-value(align="right")
+            a(href=`/ds/v2-xx/${flipnote.creator_fsid}/profile.htm`) #{flipnote.creator_name}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      // Stars
+      tr
+        th(width="90")
+          .item-term Stars
+        td(width="136")
+          .item-value(align="right")
+            a(href=`/flipnote/${flipnote.creator_fsid}/${flipnote.id}.htm?mode=stardetail`)
+              span.star0c ★
+              span.star0 #{flipnote.green_stars}
+            br
+            a(href=`/flipnote/${flipnote.creator_fsid}/${flipnote.id}.htm?mode=stardetail`)
+              span.star1c ★
+              span.star1 #{flipnote.red_stars}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      // Comments
+      tr
+        th(width="90")
+          .item-term Comments
+        td(width="136")
+          .item-value(align="right")
+            a(href=`/flipnote/${flipnote.creator_fsid}/${flipnote.id}.htm?mode=commentshalfsize`)
+              | #{flipnote.comment_count}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      // Views
+      tr
+        th(width="90")
+          .item-term Times Viewed
+        td(width="136")
+          .item-value(align="right") #{flipnote.views}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      // Downloads
+      tr
+        th(width="90")
+          .item-term Downloads
+        td(width="136")
+          .item-value(align="right") #{flipnote.downloads}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      // Last Updated
+      tr
+        th(width="90")
+          .item-term Last Updated
+        td(width="136")
+          .item-value(align="right") #{flipnote.updated_at}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      // Channels
+      tr
+        th(width="90")
+          .item-term Channels
+        td(width="136")
+          .item-value(align="right")
+            a(href=`/ds/v2-xx/ch/${flipnote.channel_id}.uls`) #{flipnote.channel_name}
+            |  (
+            a(href=`/flipnote/${flipnote.creator_fsid}/${flipnote.id}.htm?mode=remove_channel&c=${flipnote.channel_id}`) Remove
+            | )
+
+      tr
+        td(colspan="2")
+          .hr
+
+      // Command (DSi button sequence)
+      tr
+        th(width="90")
+          .item-term Command
+        td(width="136")
+          .item-value(align="right") #{flipnote.command}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      // Flipnote ID
+      tr
+        th(width="90")
+          .item-term Flipnote ID
+        td(width="136")
+          .item-value(align="right") #{flipnote.numeric_id}

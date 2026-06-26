@@ -1,0 +1,22 @@
+html
+  head
+    title News
+    meta(name="uppertitle" content="News")
+    link(rel="stylesheet" type="text/css" href="/css/ds/common.css")
+
+  body
+    .container
+      .news-body
+        div(align="center")
+          img(src="/images/en-gb/ds/help_index_news.ntft" width="226" height="21")
+
+        .help_guide.pad5
+          table(width="240")
+            each item in news
+              tr
+                td(width="10" align="center")
+                  img(src="/images/ds/list.ntft" width="8" height="10")
+                td
+                  .list
+                    a(href=`/ds/${region}/help/news/${item.filename}.htm`)
+                      | #{item.date}: #{item.title}

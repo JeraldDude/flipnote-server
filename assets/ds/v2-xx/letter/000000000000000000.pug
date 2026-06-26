@@ -1,0 +1,22 @@
+html
+  head
+    title #{news.title}
+
+    link(rel="stylesheet" type="text/css" href="/css/ds/common.css")
+    meta(name="uppertitle" content="Information")
+
+  body
+    .container
+      .news-head(align="center") #{news.title}
+
+      .news-body
+        // Main text body (HTML-safe)
+        != news.body
+
+        br
+        br
+
+        // Optional link (if provided)
+        if news.link_url
+          a(href=news.link_url) #{news.link_text}
+          br

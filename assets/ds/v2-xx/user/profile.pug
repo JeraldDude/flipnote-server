@@ -1,0 +1,186 @@
+html
+  head
+    meta(name="upperlink" content=user.theme.upperlink)
+    link(rel="stylesheet" type="text/css" href=user.theme.css)
+
+  body
+    .head(align="center")
+      img(src=user.theme.head width="218" height="12")
+
+      .prof_out
+        table.profbox(width="216" border="0" cellspacing="0" cellpadding="0")
+          tr
+            td(width="5")
+            td(width="50" align="right")
+            td
+
+          tr
+            td(width="5" rowspan="3")
+            td(rowspan="3" align="right")
+              .icon(width="50")
+                img(src=user.icon width="48" height="48")
+            td
+
+          tr
+            td.username #{user.username}
+
+          tr
+            td
+              img(src="/images/ds/spacer.npf" width="3" height="1")
+              img(src="/images/ds/ranking.ntft" width="12" height="12")
+              | -
+              img(src="/images/ds/spacer.npf" width="3" height="1")
+              img(src="/images/ds/fans.ntft" width="12" height="12")
+              a(href=`/ds/v2-${region}/${user.id}/fans.uls`)
+                span.more-f #{user.fans}
+
+              br
+
+              span.star0c ★
+              span.star0c #{user.green_stars}
+              span.star1c ★
+              span.star1 #{user.red_stars}
+
+          tr
+            td(colspan="3")
+              .item-value
+                div(align="right")
+                  a(href=`/ds/v2-${region}/${user.id}/profile.htm?mode=detail`)
+                    span.more-f See more
+
+      img(src=user.theme.foot width="218" height="5")
+
+    .send(align="center")
+      a(href=`/ds/v2-${region}/${user.id}/movies.uls`)
+        img(src=user.theme.send width="218" height="32" class="button")
+      div(align="right")
+        a(href=`/ds/v2-${region}/${user.id}/movies.uls`) See more
+
+    table.detail(width="226" border="0" cellspacing="0" cellpadding="0")
+      tr
+        td(colspan="2")
+          .hr
+
+      tr
+        th(width="80")
+          .item-term Posted Comments
+        td(width="146")
+          .item-value(align="right") #{user.posted_comments}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      tr
+        th(width="80")
+          .item-term Starred Flipnotes
+        td(width="146")
+          .item-value(align="right")
+            a(href=`/ds/v2-${region}/${user.id}/favorite/movies.uls`) #{user.starred}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      tr
+        th(width="80")
+          .item-term Favourite Creators
+        td(width="146")
+          .item-value(align="right")
+            a(href=`/ds/v2-${region}/${user.id}/favorite/authors.uls`) #{user.favorite_creators}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      tr
+        th(width="80")
+          .item-term Channels created
+        td(width="146")
+          .item-value(align="right")
+            a(href=`/ds/v2-${region}/${user.id}/channels.uls?type=owned`) #{user.channels_created}
+
+      tr
+        td(colspan="2")
+          .hr
+
+      tr
+        th(width="80")
+          .item-term Favourite Channels
+        td(width="146")
+          .item-value(align="right")
+            a(href=`/ds/v2-${region}/${user.id}/channels.uls`) #{user.favorite_channels}
+
+    .pad5t
+
+    .notice2
+      div(align="left")
+        img(src="/images/ds/key.ntft" width="10" height="12")
+        |  #{user.username}'s Flipnote Friends
+      div(align="right")
+        a(href=`/ds/v2-${region}/${user.id}/friends.uls`) #{user.friends} People
+
+      .hr.colorstar
+
+      div(align="left")
+        img(src="/images/ds/key.ntft" width="10" height="12")
+        |  Stars you can use
+      div(align="right")
+        span.star0c ★
+        span.star0 #{user.green_stars}
+        span.star1c ★
+        span.star1 #{user.red_stars}
+        span.star2c ★
+        span.star2 #{user.blue_stars}
+        span.star3c ★
+        span.star3 #{user.purple_stars}
+
+      .hr.colorstar
+
+      table
+        tr
+          td(width="50")
+            .icon(width="50")
+              a(href=`/ds/v2-${region}/${user.id}/profile.htm?mode=edit`)
+                img(src=user.theme.item width="48" height="48")
+          td(width="3")
+          td
+            | Current Theme
+            br
+            a(href=`/ds/v2-${region}/${user.id}/profile.htm?mode=edit`) Change
+
+      .hr.colorstar
+
+      div(align="left" class="mar-b10") Notification Settings
+      div(align="left") Service-related announcements
+      div(align="right") Receive
+      div(align="left") Newsletters and activity reports
+      div(align="right") Receive
+      div(align="right")
+        a(href=`/ds/v2-${region}/setting.letter.htm`) Change
+
+    .notice2
+      div(align="center")
+        img(src="/images/ds/setting_icon.ntft" width="13" height="13")
+        |  Settings
+      .pad5b
+      .hr
+      .pad5b
+
+      table
+        tr
+          td(width="100" align="center")
+            a(href=`/ds/v2-${region}/letter/setting.htm`) Mail Settings
+          td(width="100" align="center")
+            a(href=`/ds/v2-${region}/user/setting.htm`) Service Settings
+
+    table.fullsize(width="240" border="0" cellspacing="0" cellpadding="0")
+      tr
+        td
+          .hr
+      tr
+        td.gray
+          .item-term
+      tr
+        td.gray
+          .item-term
