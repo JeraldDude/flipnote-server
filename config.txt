@@ -1,0 +1,3 @@
+X-DSi-ID = "{flipnote.creator-id}"
+X-DSi-Region = "{region}"
+X-Birthday = "{birthday}"
