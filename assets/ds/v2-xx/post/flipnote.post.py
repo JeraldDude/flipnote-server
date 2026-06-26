@@ -3,7 +3,7 @@
 # seen at /ds/v2-us/post/flipnote.post meaning an endpoint where ppm files are carried and posted to the server
 # -------------------------------------------------------------------------------------------------------------
 def register_flipnote_post(app):
-    @app.route("/ds/v2-us/post/flipnote.post", methods=["POST"])
+    @app.route("/ds/v2-xx/post/flipnote.post", methods=["POST"])
     def flipnote_post():
         # DSi console ID from header
         dsi_id = request.headers.get("X-DSi-ID", "UNKNOWN-DSI")
